@@ -50,6 +50,8 @@ Plug 'neovim/nvim-lspconfig'
 
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'dstein64/vim-startuptime'
 
 " Editor Stuff
 Plug 'phaazon/hop.nvim'
@@ -58,6 +60,7 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'mattn/eMmet-vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tversteeg/registers.nvim'
+Plug 'voldikss/vim-floaterm'
 
 " Colors
 "Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -98,6 +101,6 @@ colorscheme nord
 "------------Emmet---------------------"
 " Emmet has the worst trigger in vim, for that cord I'm better using Emacs
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,jsx EmmetInstall
 let g:user_emmet_leader_key='<C-s>'
 

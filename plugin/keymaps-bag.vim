@@ -32,3 +32,11 @@ nnoremap <leader>ps :Rg<space>
 nnoremap <sIlent> <C-A>= :vertical resize +5<cr>
 nnoremap <silent> <C-A>- :vertical resize -5<cr>
 
+" Use alt + hjkl to resize windows
+nnoremap <Esc>j   :resize -2<CR>
+nnoremap <Esc>k    :resize +2<CR>
+nnoremap <Esc>h    :vertical resize -2<CR>
+nnoremap <Esc>l    :vertical resize +2<CR>
+
+" Escape redraws the screen and removes any search highlighting.
+nnoremap <esc> :noh<return><esc>

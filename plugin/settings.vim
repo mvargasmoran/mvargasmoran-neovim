@@ -2,9 +2,9 @@ set relativenumber                      "relative jumps, digits+j goes down, dig
 set nu                                  "will show the current "real" line number instead of relative 0
 set backspace=indent,eol,start
 set nohlsearch
-set tabstop=4 softtabstop=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
-set shiftwidth=4
 set smartindent
 set noerrorbells
 set nowrap
@@ -22,4 +22,4 @@ highlight ColorColumn ctermbg=lightgray guibg=lightgray
 set autoread
 set scrolloff=8
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-
+set cmdheight=2                         " More space for displaying messages
