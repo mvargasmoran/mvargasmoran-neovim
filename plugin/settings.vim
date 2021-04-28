@@ -23,3 +23,8 @@ set autoread
 set scrolloff=8
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set cmdheight=2                         " More space for displaying messages
+
+" Vim which key
+set timeout
+" By default timeoutlen is 1000 ms
+set timeoutlen=500

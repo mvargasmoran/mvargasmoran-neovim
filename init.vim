@@ -62,6 +62,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tversteeg/registers.nvim'
 Plug 'voldikss/vim-floaterm'
 
+" Vim helpers
+Plug 'liuchengxu/vim-which-key'
+
 " Colors
 "Plug 'colepeters/spacemacs-theme.vim' " This is the important color
 "Plug 'kyazdani42/blue-moon'
