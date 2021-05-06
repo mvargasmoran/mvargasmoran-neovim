@@ -17,7 +17,7 @@ nnoremap <leader>gd :YcmComp      GoToDefinition<cr>
 
 " More keymaps
 nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd h<cr>
+nnoremap <leader>j :wincmd j<cr>
 nnoremap <leader>k :wincmd k<cr>
 nnoremap <leader>l :wincmd l<cr>
 nnoremap <leader>vp :wincmd v<bar> :Ex <bar> :vertical resize 30<cr>
@@ -27,10 +27,10 @@ nnoremap <leader>ps :Rg<space>
 "nnoremap <silent> <C-A>- :vertical resize -5<cr>
 
 " Use alt + hjkl to resize windows
-nnoremap <Esc>j   :resize -2<CR>
-nnoremap <Esc>k    :resize +2<CR>
-nnoremap <Esc>h    :vertical resize -2<CR>
-nnoremap <Esc>l    :vertical resize +2<CR>
+nnoremap <leader>rj   :resize -2<CR>
+nnoremap <leader>rk    :resize +2<CR>
+nnoremap <leader>rh    :vertical resize -2<CR>
+nnoremap <leader>rl    :vertical resize +2<CR>
 
 " Escape redraws the screen and removes any search highlighting.
 "nnoremap <esc> :noh<return><esc>
