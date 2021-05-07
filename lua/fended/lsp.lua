@@ -2,6 +2,11 @@ local function on_attach()
     -- TODO: TJ told me to do this and I should do it because he is Telescopic
     -- "Big Tech" "Cash Money" Johnson
 end
+-- npm install -g vls
+require'lspconfig'.vuels.setup{}
+
+-- npm install -g vim-language-server
+require'lspconfig'.vimls.setup{}
 
 -- npm i -g bash-language-server
 require'lspconfig'.bashls.setup{}
