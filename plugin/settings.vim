@@ -22,7 +22,7 @@ highlight ColorColumn ctermbg=lightgray guibg=lightgray
 set autoread
 set scrolloff=8
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-set cmdheight=2                         " More space for displaying messages
+set cmdheight=4                         " More space for displaying messages
 
 " Vim which key
 set timeout

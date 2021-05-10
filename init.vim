@@ -51,6 +51,7 @@ Plug 'tversteeg/registers.nvim'
 Plug 'mattn/eMmet-vim'
 Plug 'norcalli/nvim-colorizer.lua'
 "Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-fugitive'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -76,9 +77,9 @@ endif
 
 set background=dark
 let ayucolor="dark"   " for dark version of theme
-let ayucolor="mirage" " for mirage version of theme
 let ayucolor="light"  " for light version of theme
-colorscheme blue-moon
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
 
 
 "------------Emmet------------------------------------------------------------"
