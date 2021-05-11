@@ -37,6 +37,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'ap/vim-css-color'
 
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
