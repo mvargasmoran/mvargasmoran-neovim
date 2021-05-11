@@ -64,6 +64,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+
 call plug#end()
 
 
@@ -76,11 +77,11 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-let ayucolor="dark"   " for dark version of theme
 let ayucolor="light"  " for light version of theme
+let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
+colorscheme iceberg
 colorscheme ayu
-
 
 "------------Emmet------------------------------------------------------------"
 " Emmet has the worst trigger in vim, for that cord I'm better using Emacs
@@ -90,9 +91,10 @@ let g:user_emmet_leader_key='<C-s>'
 
 
 "------------LUA (here lies the nvim-lspconfig stuff)-------------------------"
+" Fended means Friendship ended
+" Check the files inside to get help on how to install each LSP server (most
+" are just running an "npm install -g" command
 lua require("fended")
-
-
 
 
 " Check if there's lsp attached

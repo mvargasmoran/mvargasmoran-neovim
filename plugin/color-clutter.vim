@@ -9,6 +9,29 @@
 "     set termguicolors
 " endif
 "
+"
+" ColorScheme Material, the moonlight is just a mod and should be use by it
+" self.
+" Plug 'shaunsingh/moonlight.nvim'
+"
+" This material is a complete package with all the settings for several
+" themes.
+" Plug 'marko-cerovac/material.nvim'
+
+" let g:material_style = 'deep ocean'
+" let g:material_style = 'palenight'
+" let g:material_style = 'oceanic'
+" let g:material_style = 'lighter'
+" let g:material_style = 'darker'
+" let g:material_style = 'moonlight'
+" let g:material_style = 'palenight'
+" colorscheme material
+
+"
+"
+"
+"
+"
 " set background=dark
 " colorscheme facebook
 
