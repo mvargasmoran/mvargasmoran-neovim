@@ -51,7 +51,7 @@ Plug 'mbbill/undotree'
 Plug 'tversteeg/registers.nvim'
 Plug 'mattn/eMmet-vim'
 Plug 'norcalli/nvim-colorizer.lua'
-"Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 
 " Vim helpers
