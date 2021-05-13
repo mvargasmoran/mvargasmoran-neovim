@@ -1,7 +1,7 @@
 ""---------General Mappings------------"
 
 " Highlight TrailingWhiteSpaces
-nnoremap <leader>ws :highlight Trailing_Whitespace guibg=#FA0050<cr> :match Trailing_Whitespace /\s\+$/<cr>
+"nnoremap <leader>s :highlight Trailing_Whitespace guibg=#FA0050<cr> :match Trailing_Whitespace /\s\+$/<cr>
 
 " First go into VISUAL and them push the lines with J/K
 vnoremap J :m '>+1<CR>gv=gv
@@ -16,10 +16,10 @@ nnoremap <leader>gd :YcmComp      GoToDefinition<cr>
 
 
 " More keymaps
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
+nnoremap <leader>wh :wincmd h<cr>
+nnoremap <leader>wj :wincmd j<cr>
+nnoremap <leader>wk :wincmd k<cr>
+nnoremap <leader>wl :wincmd l<cr>
 nnoremap <leader>vp :wincmd v<bar> :Ex <bar> :vertical resize 30<cr>
 nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>ps :Rg<space>
@@ -43,3 +43,7 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+" This feels like emacs cycling buffers, feels like home
+nnoremap <silent> <C-x>j        :bp<CR>
+nnoremap <silent> <C-x>k        :bn<CR>

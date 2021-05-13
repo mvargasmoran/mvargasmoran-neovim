@@ -1,5 +1,5 @@
+"Friendship Ended with prepackaged vim
 "NEOVIM's specific init file--------------------------------------------------"
-
 
 
 
@@ -29,8 +29,11 @@ Plug 'glepnir/lspsaga.nvim'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'nvim-treesitter/playground'
+Plug 'kyazdani42/nvim-web-devicons'                           " Telescope icons
+
+" Treesitter
+"Plug 'nvim-treesitter/playground'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Svelte I like Svelte
 Plug 'pangloss/vim-javascript'
@@ -41,7 +44,6 @@ Plug 'ap/vim-css-color'
 
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'dstein64/vim-startuptime'
 
 " Editor Stuff
@@ -65,9 +67,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
-
 call plug#end()
-
 
 "------------Aestetics--------------------------------------------------------"
 set t_Co=256
