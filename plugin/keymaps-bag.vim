@@ -46,4 +46,6 @@ nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " This feels like emacs cycling buffers, feels like home
 nnoremap <silent> <C-x>j        :bp<CR>
+nnoremap <silent> <C-x>h        :bp<CR>
 nnoremap <silent> <C-x>k        :bn<CR>
+nnoremap <silent> <C-x>l        :bn<CR>
