@@ -59,6 +59,9 @@ Plug 'tpope/vim-fugitive'
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
 
+" Vim toys
+Plug 'andweeb/presence.nvim'
+
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
 Plug 'kyazdani42/blue-moon'
@@ -67,6 +70,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'mvargasmoran/shadows-die-twice-vim'
 call plug#end()
 
 "------------Aestetics--------------------------------------------------------"
@@ -83,6 +87,7 @@ let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
 colorscheme iceberg
 colorscheme ayu
+colorscheme shadows-die-twice
 
 "------------Emmet------------------------------------------------------------"
 " Emmet has the worst trigger in vim, for that cord I'm better using Emacs
