@@ -13,7 +13,7 @@ require'lspconfig'.bashls.setup{}
 
 
 -- npm i -g pyright
-require'lspconfig'.pyright.setup{ on_attach=on_attach }
+require'lspconfig'.pyright.setup{}
 
 
 -- This one needed llvm in macos
