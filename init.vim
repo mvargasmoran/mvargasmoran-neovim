@@ -55,6 +55,7 @@ Plug 'mattn/eMmet-vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
+Plug 'editorconfig/editorconfig-vim'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
