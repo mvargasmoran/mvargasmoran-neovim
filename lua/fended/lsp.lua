@@ -22,6 +22,7 @@ require'lspconfig'.clangd.setup {
     root_dir = function() return vim.loop.cwd() end
 }
 
+-- npm install -g typescript typescript-language-server
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.svelte.setup{}
 require'lspconfig'.texlab.setup{}
