@@ -3,7 +3,7 @@ local function on_attach()
     -- "Big Tech" "Cash Money" Johnson
 end
 -- npm install -g vls
-require'lspconfig'.vuels.setup{}
+-- require'lspconfig'.vuels.setup{}
 
 -- npm install -g vim-language-server
 require'lspconfig'.vimls.setup{}

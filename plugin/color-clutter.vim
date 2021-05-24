@@ -125,5 +125,6 @@
 "Plug 'sts10/vim-pink-moon'
 "Plug 'tjammer/blandon.vim'
 "Plug 'tek256/simple-dark'
+"logico/typewriter
 "Plug 'xero/sourcerer.vim'
 

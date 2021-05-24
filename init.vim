@@ -71,6 +71,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'Shadorain/shadotheme'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'tek256/simple-dark'
 Plug 'mvargasmoran/shadows-die-twice-vim'
 call plug#end()
 
@@ -86,8 +89,15 @@ set background=dark
 let ayucolor="light"  " for light version of theme
 let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
-colorscheme iceberg
 colorscheme ayu
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
+
+"colorscheme iceberg
+"colorscheme shado
+"colorscheme xshado
+"colorscheme simple-dark
 colorscheme shadows-die-twice
 
 "------------Emmet------------------------------------------------------------"
