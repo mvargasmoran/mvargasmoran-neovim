@@ -32,7 +32,7 @@ require'lspconfig'.texlab.setup{}
 -- ./bin/macOS/lua-language-server -E ./main.lua
 
 local sumneko_root_path = '/Users/marcos/Code/sumneko/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "./bin/macOS/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
 
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,

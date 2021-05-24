@@ -62,6 +62,7 @@ Plug 'liuchengxu/vim-which-key'
 
 " Vim toys
 Plug 'andweeb/presence.nvim'
+Plug 'mvargasmoran/rubberduck.nvim'
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -93,12 +94,12 @@ colorscheme ayu
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
+colorscheme shadows-die-twice
 
 "colorscheme iceberg
 "colorscheme shado
 "colorscheme xshado
 "colorscheme simple-dark
-colorscheme shadows-die-twice
 
 "------------Emmet------------------------------------------------------------"
 " Emmet has the worst trigger in vim, for that cord I'm better using Emacs
@@ -112,7 +113,7 @@ let g:user_emmet_leader_key='<C-s>'
 " Check the files inside to get help on how to install each LSP server (most
 " are just running an "npm install -g" command
 lua require("fended")
-
+lua require("telescope").load_extension("rubberduck")
 
 " Check if there's lsp attached
 " lua print(vim.inspect(vim.lsp.buf_get_clients()))
