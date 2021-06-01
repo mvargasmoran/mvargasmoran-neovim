@@ -1,3 +1,9 @@
+" My actual keymaps
+
+nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
+vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
+
+
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
