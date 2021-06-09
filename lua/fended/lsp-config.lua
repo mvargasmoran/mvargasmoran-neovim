@@ -18,7 +18,6 @@ require'lspconfig'.pyright.setup{}
 
 -- This one needed llvm in macos
 require'lspconfig'.clangd.setup {
-    on_attach = on_attach,
     root_dir = function() return vim.loop.cwd() end
 }
 
