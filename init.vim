@@ -33,8 +33,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'                           " Telescope icons
 
 " Treesitter
-"Plug 'nvim-treesitter/playground'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/playground'
 
 " Svelte I like Svelte
 Plug 'pangloss/vim-javascript'
@@ -92,10 +92,10 @@ let ayucolor="light"  " for light version of theme
 let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
 colorscheme ayu
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
-colorscheme shadows-die-twice
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
+"colorscheme tokyonight
+"colorscheme shadows-die-twice
 
 "colorscheme iceberg
 "colorscheme shado
