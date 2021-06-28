@@ -60,11 +60,12 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
+Plug 'kamykn/spelunker.vim'
 
 " Vim toys
 Plug 'andweeb/presence.nvim'
 Plug 'mvargasmoran/rubberduck.nvim'
-Plug 'kamykn/spelunker.vim'
+Plug 'ThePrimeagen/vim-be-good'
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -92,11 +93,11 @@ set background=dark
 let ayucolor="light"  " for light version of theme
 let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+"colorscheme ayu
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-"colorscheme shadows-die-twice
+colorscheme shadows-die-twice
 
 "colorscheme iceberg
 "colorscheme shado
