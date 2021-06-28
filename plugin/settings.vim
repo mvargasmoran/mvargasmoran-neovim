@@ -15,7 +15,8 @@ set incsearch
 set ignorecase
 set smartcase
 set ruler
-set spell
+"set spell
+set nospell
 set signcolumn=yes                      "put an E (error) mark at the a new starting column
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgray guibg=lightgray

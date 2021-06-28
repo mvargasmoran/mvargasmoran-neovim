@@ -64,6 +64,7 @@ Plug 'liuchengxu/vim-which-key'
 " Vim toys
 Plug 'andweeb/presence.nvim'
 Plug 'mvargasmoran/rubberduck.nvim'
+Plug 'kamykn/spelunker.vim'
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
