@@ -66,6 +66,7 @@ Plug 'kamykn/spelunker.vim'
 Plug 'andweeb/presence.nvim'
 Plug 'mvargasmoran/rubberduck.nvim'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'psliwka/vim-smoothie'
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -79,6 +80,7 @@ Plug 'Shadorain/shadotheme'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'tek256/simple-dark'
 Plug 'mvargasmoran/shadows-die-twice-vim'
+Plug 'vim-conf-live/vimconflive2021-colorscheme'
 call plug#end()
 
 "------------Aestetics--------------------------------------------------------"
@@ -98,6 +100,8 @@ let ayucolor="mirage" " for mirage version of theme
 "let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
 colorscheme shadows-die-twice
+colorscheme vimconflive-2021
+
 
 "colorscheme iceberg
 "colorscheme shado

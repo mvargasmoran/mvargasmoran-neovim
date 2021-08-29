@@ -29,3 +29,4 @@ set cmdheight=4                         " More space for displaying messages
 set timeout
 " By default timeoutlen is 1000 ms
 set timeoutlen=500
+set splitright
