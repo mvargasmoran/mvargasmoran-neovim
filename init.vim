@@ -43,6 +43,11 @@ Plug 'w0rp/ale'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'ap/vim-css-color'
 
+" Infra as code
+Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-consul'
+Plug 'hashivim/vim-packer'
+
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'dstein64/vim-startuptime'
@@ -100,7 +105,7 @@ let ayucolor="mirage" " for mirage version of theme
 "let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
 colorscheme shadows-die-twice
-colorscheme vimconflive-2021
+" colorscheme vimconflive-2021
 
 
 "colorscheme iceberg

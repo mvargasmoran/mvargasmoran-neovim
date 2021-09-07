@@ -15,6 +15,8 @@ require'lspconfig'.bashls.setup{}
 -- npm i -g pyright
 require'lspconfig'.pyright.setup{}
 
+-- brew install hashicorp/tap/terraform-ls
+require'lspconfig'.terraformls.setup{}
 
 -- This one needed llvm in macos
 require'lspconfig'.clangd.setup {
@@ -25,6 +27,11 @@ require'lspconfig'.clangd.setup {
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.svelte.setup{}
 require'lspconfig'.texlab.setup{}
+
+
+-- GO!
+-- GO111MODULE=on go get golang.org/x/tools/gopls@latest
+require'lspconfig'.gopls.setup{}
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- /Users/marcos/Code/sumneko/lua-language-server
