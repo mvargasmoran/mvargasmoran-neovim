@@ -42,6 +42,10 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'ap/vim-css-color'
+Plug 'leafOfTree/vim-svelte-plugin'
+
+" Vue
+Plug 'leafOfTree/vim-vue-plugin'
 
 " Infra as code
 Plug 'hashivim/vim-terraform'
@@ -62,6 +66,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sbdchd/neoformat'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -72,6 +77,7 @@ Plug 'andweeb/presence.nvim'
 Plug 'mvargasmoran/rubberduck.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'psliwka/vim-smoothie'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -84,8 +90,10 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'Shadorain/shadotheme'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'tek256/simple-dark'
+Plug 'vigoux/oak'
 Plug 'mvargasmoran/shadows-die-twice-vim'
 Plug 'vim-conf-live/vimconflive2021-colorscheme'
+
 call plug#end()
 
 "------------Aestetics--------------------------------------------------------"
@@ -98,8 +106,8 @@ endif
 
 set background=dark
 let ayucolor="light"  " for light version of theme
-let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
