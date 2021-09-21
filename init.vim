@@ -42,31 +42,30 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'ap/vim-css-color'
-Plug 'leafOfTree/vim-svelte-plugin'
+" Plug 'leafOfTree/vim-svelte-plugin'
 
 " Vue
 Plug 'leafOfTree/vim-vue-plugin'
 
 " Infra as code
-Plug 'hashivim/vim-terraform'
-Plug 'hashivim/vim-consul'
-Plug 'hashivim/vim-packer'
+" Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-consul'
+" Plug 'hashivim/vim-packer'
 
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'dstein64/vim-startuptime'
 
 " Editor Stuff
-"Plug 'ThePrimeagen/harpoon'
+Plug 'ThePrimeagen/harpoon'
 Plug 'phaazon/hop.nvim'
 Plug 'mbbill/undotree'
 Plug 'tversteeg/registers.nvim'
-Plug 'mattn/eMmet-vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sbdchd/neoformat'
+Plug 'tpope/vim-commentary'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -74,7 +73,6 @@ Plug 'kamykn/spelunker.vim'
 
 " Vim toys
 Plug 'andweeb/presence.nvim'
-Plug 'mvargasmoran/rubberduck.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'psliwka/vim-smoothie'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -133,7 +131,6 @@ autocmd FileType html,css,jsx EmmetInstall
 " Check the files inside to get help on how to install each LSP server (most
 " are just running an "npm install -g" command
 lua require("fended")
-lua require("telescope").load_extension("rubberduck")
 
 " Check if there's lsp attached
 " lua print(vim.inspect(vim.lsp.buf_get_clients()))

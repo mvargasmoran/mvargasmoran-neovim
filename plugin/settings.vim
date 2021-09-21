@@ -1,4 +1,4 @@
-"set relativenumber                      "relative jumps, digits+j goes down, digits+k up
+set relativenumber                      "relative jumps, digits+j goes down, digits+k up
 "set mouse=a
 set nu                                  "will show the current "real" line number instead of relative 0
 set backspace=indent,eol,start

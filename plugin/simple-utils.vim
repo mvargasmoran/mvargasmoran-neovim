@@ -1,10 +1,10 @@
-fun! TrimWhitepsace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
+" fun! TrimWhitepsace()
+"     let l:save = winsaveview()
+"     keeppatterns %s/\s\+$//e
+"     call winrestview(l:save)
+" endfun
 
-augroup THE_PRIMEAGEN
-    autocmd!
-    autocmd BufWritePre * :call TrimWhitepsace()
-augroup END
+" augroup THE_PRIMEAGEN
+"     autocmd!
+"     autocmd BufWritePre * :call TrimWhitepsace()
+" augroup END
