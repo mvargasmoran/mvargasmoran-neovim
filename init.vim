@@ -125,7 +125,6 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx EmmetInstall
 "let g:user_emmet_leader_key='<C-s>'
 
-
 "------------LUA (here lies the nvim-lspconfig stuff)-------------------------"
 " Fended means Friendship ended
 " Check the files inside to get help on how to install each LSP server (most
