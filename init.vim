@@ -24,7 +24,9 @@ call plug#begin()
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
