@@ -16,11 +16,12 @@ set incsearch
 set ignorecase
 set smartcase
 set ruler
+" I'm using spelunker
 "set spell
 set nospell
 set signcolumn=yes                      "put an E (error) mark at the a new starting column
 set colorcolumn=80
-highlight ColorColumn ctermbg=lightgray guibg=lightgray
+" highlight ColorColumn ctermbg=lightgray guibg=lightgray
 set autoread
 set scrolloff=8
 set clipboard=unnamedplus               " Copy paste between vim and everything else
@@ -30,4 +31,5 @@ set cmdheight=4                         " More space for displaying messages
 set timeout
 " By default timeoutlen is 1000 ms
 set timeoutlen=500
+" This is the split behavior I'm used to
 set splitright

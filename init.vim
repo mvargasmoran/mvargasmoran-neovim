@@ -24,12 +24,15 @@ call plug#begin()
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
+" snippets needed for nvim-cmp
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'                           " Telescope icons
@@ -68,6 +71,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'mihaifm/bufstop'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -78,6 +82,8 @@ Plug 'andweeb/presence.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'psliwka/vim-smoothie'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Colors
 Plug 'colepeters/spacemacs-theme.vim' " This is the important color
@@ -105,16 +111,15 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
+let ayucolor="light"  " for light version of theme
 let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-"let g:tokyonight_style = 'night' " available: night, storm
-"let g:tokyonight_enable_italic = 1
+colorscheme ayu
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-colorscheme shadows-die-twice
-" colorscheme vimconflive-2021
-
+"colorscheme shadows-die-twice
+"colorscheme vimconflive-2021
 
 "colorscheme iceberg
 "colorscheme shado
