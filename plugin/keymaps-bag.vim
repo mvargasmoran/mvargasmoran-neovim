@@ -12,8 +12,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>hc :HopChar2<cr>
 
 " YouCompleteMe
-nnoremap <leader>gd :YcmComp      GoToDefinition<cr>
-
+"nnoremap <leader>gd :YcmComp      GoToDefinition<cr>
 
 " More keymaps
 nnoremap <leader>wh :wincmd h<cr>
@@ -27,14 +26,13 @@ nnoremap <leader>ps :Rg<space>
 "nnoremap <silent> <C-A>- :vertical resize -5<cr>
 
 " Use alt + hjkl to resize windows
-nnoremap <leader>rj   :resize -2<CR>
-nnoremap <leader>rk    :resize +2<CR>
-nnoremap <leader>rh    :vertical resize -2<CR>
-nnoremap <leader>rl    :vertical resize +2<CR>
+nnoremap <leader>rj :resize -2<CR>
+nnoremap <leader>rk :resize +2<CR>
+nnoremap <leader>rh :vertical resize -2<CR>
+nnoremap <leader>rl :vertical resize +2<CR>
 
 " Escape redraws the screen and removes any search highlighting.
 "nnoremap <esc> :noh<return><esc>
-
 
 " Which Key stuff (stolen from emacs it seems)
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
@@ -45,8 +43,8 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " This feels like emacs cycling buffers, feels like home
-nnoremap <silent> <C-x>j        :bp<CR>
-nnoremap <silent> <C-x>h        :bp<CR>
-nnoremap <silent> <C-x>k        :bn<CR>
-nnoremap <silent> <C-x>l        :bn<CR>
+nnoremap <silent> <C-x>j :bp<CR>
+nnoremap <silent> <C-x>h :bp<CR>
+nnoremap <silent> <C-x>k :bn<CR>
+nnoremap <silent> <C-x>l :bn<CR>
 
