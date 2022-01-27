@@ -9,8 +9,67 @@ require'lspconfig'.vuels.setup{}
 require'lspconfig'.vimls.setup{}
 
 -- npm i -g bash-language-server
-require'lspconfig'.bashls.setup{}
+require'lspconfig'.yamlls.setup{
+    on_attach=on_attach,
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    settings = {
+        yaml = {
+            schemas = {
+                ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+            }
+        }
+    }
+}
 
+-- npm install -g emmet-ls
+-- require'lspconfig'.emmet_ls.setup{
+--   filetypes = { "html", "css", "jsx", "tsx" }
+-- }
+
+-- npm install -g ls_emmet
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig.configs'
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+if not configs.ls_emmet then
+  configs.ls_emmet = {
+    default_config = {
+      cmd = { 'ls_emmet', '--stdio' };
+      filetypes = {
+        'html',
+        'css',
+        'scss',
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'haml',
+        'xml',
+        'xsl',
+        'pug',
+        'slim',
+        'sass',
+        'stylus',
+        'less',
+        'sss',
+        'hbs',
+        'handlebars',
+      };
+      root_dir = function(fname)
+        return vim.loop.cwd()
+      end;
+      settings = {};
+    };
+  }
+end
+
+lspconfig.ls_emmet.setup { capabilities = capabilities }
+
+-- npm i -g yaml-language-server@latest
+require'lspconfig'.yamlls.setup{}
 
 -- npm i -g pyright
 require'lspconfig'.pyright.setup{}
@@ -25,9 +84,12 @@ require'lspconfig'.clangd.setup {
 
 -- npm install -g typescript typescript-language-server
 require'lspconfig'.tsserver.setup{}
-require'lspconfig'.svelte.setup{}
-require'lspconfig'.texlab.setup{}
 
+-- npm install -g svelte-language-server
+require'lspconfig'.svelte.setup{}
+
+
+require'lspconfig'.texlab.setup{}
 
 -- GO!
 -- GO111MODULE=on go get golang.org/x/tools/gopls@latest

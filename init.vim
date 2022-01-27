@@ -36,17 +36,21 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'                           " Telescope icons
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " better fuzzy find
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
 
 " Svelte I like Svelte
-Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'w0rp/ale'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'ap/vim-css-color'
+
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'leafOfTree/vim-svelte-plugin'
 
 " Vue
@@ -72,6 +76,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'mihaifm/bufstop'
+" Plug 'mattn/emmet-vim'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -111,14 +116,14 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-let ayucolor="mirage" " for mirage version of theme
 let ayucolor="light"  " for light version of theme
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+let ayucolor="mirage" " for mirage version of theme
+"colorscheme ayu
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-"colorscheme shadows-die-twice
+colorscheme shadows-die-twice
 "colorscheme vimconflive-2021
 
 "colorscheme iceberg
@@ -128,9 +133,9 @@ let g:tokyonight_enable_italic = 1
 
 "------------Emmet------------------------------------------------------------"
 " Emmet has the worst trigger in vim, for that cord I'm better using Emacs
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,jsx EmmetInstall
-"let g:user_emmet_leader_key='<C-s>'
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,jsx,tsx EmmetInstall
+" let g:user_emmet_leader_key='<C-s>'
 
 "------------LUA (here lies the nvim-lspconfig stuff)-------------------------"
 " Fended means Friendship ended
@@ -138,5 +143,3 @@ autocmd FileType html,css,jsx EmmetInstall
 " are just running an "npm install -g" command
 lua require("fended")
 
-" Check if there's lsp attached
-" lua print(vim.inspect(vim.lsp.buf_get_clients()))

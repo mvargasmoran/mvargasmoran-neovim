@@ -33,3 +33,25 @@ set timeout
 set timeoutlen=500
 " This is the split behavior I'm used to
 set splitright
+
+
+" Some sane stuff that prime's recommended
+" https://www.youtube.com/watch?v=hSHATqh8svM
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" do the join line thing, 
+" set a mark, zenter the cursor, ackshually do the join, jump back to mark
+nnoremap J mzJ`z 
+nnoremap <C-j> :cnext<CR>zzzv
+
+" Undo break points 
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
