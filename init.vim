@@ -33,6 +33,7 @@ Plug 'simrat39/symbols-outline.nvim'
 " snippets needed for nvim-cmp
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'                           " Telescope icons
@@ -54,7 +55,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'leafOfTree/vim-svelte-plugin'
 
 " Vue
-Plug 'leafOfTree/vim-vue-plugin'
+" Plug 'leafOfTree/vim-vue-plugin'
+Plug 'johnsoncodehk/volar'
 
 " Infra as code
 " Plug 'hashivim/vim-terraform'
@@ -76,7 +78,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'mihaifm/bufstop'
-" Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
@@ -117,13 +119,13 @@ endif
 
 set background=dark
 let ayucolor="light"  " for light version of theme
-let ayucolor="dark"   " for dark version of theme
 let ayucolor="mirage" " for mirage version of theme
-"colorscheme ayu
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-colorscheme shadows-die-twice
+"colorscheme shadows-die-twice
 "colorscheme vimconflive-2021
 
 "colorscheme iceberg
