@@ -7,6 +7,7 @@ nnoremap <leader>pf :lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>pw :lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>")})<cr>
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>ph :lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>pr :lua require('telescope.builtin').lsp_workspace_symbols()<cr>
 
 
 " This will be deprecated soon

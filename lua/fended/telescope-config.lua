@@ -22,10 +22,11 @@ require("telescope").setup {
 -- you need to call load_extension, somewhere after setup function:
 require("telescope").load_extension "file_browser"
 
+-- ":Telescope file_browser<CR>",
 vim.api.nvim_set_keymap(
   "n",
-  "<space>fb",
-  ":Telescope file_browser",
+  "<space>pr",
+  "<cmd>lua require('telescope').extensions.file_browser.file_browser()<CR>",
   { noremap = true }
 )
 -- utils.map('n', '<leader>fb', "<cmd>lua require('telescope').extensions.file_browser.file_browser({path =  vim.fn.expand('%:p:h')})<CR>", silent_noremap)

@@ -3,10 +3,27 @@ local function on_attach()
     -- "Big Tech" "Cash Money" Johnson
 end
 -- npm install -g vls
-require'lspconfig'.vuels.setup{}
+-- require'lspconfig'.vuels.setup{}
+
+-- npm install -g @volar/server
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
+
 
 -- npm install -g vim-language-server
 require'lspconfig'.vimls.setup{}
+
+
+-- npm i -g vscode-langservers-extracted
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.cssls.setup {
+  filetypes = { "css", "scss", "less", "vue" },
+  capabilities = capabilities,
+}
 
 -- npm i -g bash-language-server
 require'lspconfig'.yamlls.setup{
