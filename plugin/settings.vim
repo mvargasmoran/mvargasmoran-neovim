@@ -21,6 +21,7 @@ set ruler
 set nospell
 set signcolumn=yes                      "put an E (error) mark at the a new starting column
 set colorcolumn=80
+set cursorcolumn
 " highlight ColorColumn ctermbg=lightgray guibg=lightgray
 set autoread
 set scrolloff=8
