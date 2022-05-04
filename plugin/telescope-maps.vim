@@ -8,6 +8,7 @@ nnoremap <leader>pw :lua require('telescope.builtin').grep_string({ search = vim
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>ph :lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>pr :lua require('telescope.builtin').lsp_workspace_symbols()<cr>
+nnoremap <leader>pl :lua require('telescope.builtin').live_grep()<cr>
 
 
 " This will be deprecated soon
