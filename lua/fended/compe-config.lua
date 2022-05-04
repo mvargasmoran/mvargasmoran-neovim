@@ -36,6 +36,25 @@ cmp.setup({
   }
 })
 
+require'cmp'.setup.cmdline('/', {
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp_document_symbol' }
+  }, {
+    { name = 'buffer' }
+  })
+})
+
+cmp.setup({
+  sources = {
+    {
+      name = 'path',
+      option = {
+        -- Options go into this table
+      },
+    },
+  },
+})
+
 -- -- Setup lspconfig.
 -- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
 --   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
