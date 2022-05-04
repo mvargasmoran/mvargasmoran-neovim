@@ -27,6 +27,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
@@ -56,7 +59,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 
 " Vue
 " Plug 'leafOfTree/vim-vue-plugin'
-Plug 'johnsoncodehk/volar'
+" Plug 'johnsoncodehk/volar'
 
 " Infra as code
 " Plug 'hashivim/vim-terraform'
@@ -118,14 +121,14 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-"colorscheme shadows-die-twice
+colorscheme shadows-die-twice
 "colorscheme vimconflive-2021
 
 "colorscheme iceberg
@@ -143,5 +146,7 @@ let g:tokyonight_enable_italic = 1
 " Fended means Friendship ended
 " Check the files inside to get help on how to install each LSP server (most
 " are just running an "npm install -g" command
+
 lua require("fended")
+
 
