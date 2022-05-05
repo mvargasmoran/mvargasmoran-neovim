@@ -26,14 +26,16 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 " snippets needed for nvim-cmp
+" For luasnip users.
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
@@ -48,13 +50,13 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/playground'
 
 " Svelte I like Svelte
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'w0rp/ale'
-Plug 'ap/vim-css-color'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'w0rp/ale'
+" Plug 'ap/vim-css-color'
 
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'evanleck/vim-svelte', {'branch': 'main'}
+" Plug 'pangloss/vim-javascript'
+" Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'leafOfTree/vim-svelte-plugin'
 
 " Vue
@@ -112,6 +114,9 @@ Plug 'vim-conf-live/vimconflive2021-colorscheme'
 
 call plug#end()
 
+
+set completeopt=menu,menuone,noselect
+
 "------------Aestetics--------------------------------------------------------"
 set t_Co=256
 
@@ -121,14 +126,14 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 "colorscheme tokyonight
-colorscheme shadows-die-twice
+"colorscheme shadows-die-twice
 "colorscheme vimconflive-2021
 
 "colorscheme iceberg
