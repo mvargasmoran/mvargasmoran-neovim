@@ -34,6 +34,8 @@ Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
+Plug 'onsails/lspkind.nvim'
+
 " snippets needed for nvim-cmp
 " For luasnip users.
 Plug 'L3MON4D3/LuaSnip'
@@ -50,7 +52,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-treesitter/playground'
 
 " Svelte I like Svelte
-" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'w0rp/ale'
 " Plug 'ap/vim-css-color'
 
