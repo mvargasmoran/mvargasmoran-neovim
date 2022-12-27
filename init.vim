@@ -9,7 +9,7 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost init.vim source %
 augroup END
-
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 let mapleader = ' ' "SPACE key as leader, Theprimeagen explains some 100ms thing, I believe him, this isn't supposed to be slow web stuff
 
 "------------Plugins Yay!-----------------------------------------------------"
@@ -30,10 +30,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
-
-Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
+Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind.nvim'
 
 " snippets needed for nvim-cmp
@@ -50,67 +49,57 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
-
+ 
+" x Post-update hook for nvim-treesitter ... Vim:E492: Not an editor command: TSUpdate
 " Svelte I like Svelte
 Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'w0rp/ale'
-" Plug 'ap/vim-css-color'
-
-" Plug 'evanleck/vim-svelte', {'branch': 'main'}
-" Plug 'pangloss/vim-javascript'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'leafOfTree/vim-svelte-plugin'
-
-" Vue
-" Plug 'leafOfTree/vim-vue-plugin'
-" Plug 'johnsoncodehk/volar'
-
-" Infra as code
-" Plug 'hashivim/vim-terraform'
-" Plug 'hashivim/vim-consul'
-" Plug 'hashivim/vim-packer'
+Plug 'w0rp/ale'
+Plug 'ap/vim-css-color'
+Plug 'rajasegar/vim-astro', {'branch': 'main'}
+"// 
+"// " Plug 'evanleck/vim-svelte', {'branch': 'main'}
+"// " Plug 'pangloss/vim-javascript'
+"// " Plug 'HerringtonDarkholme/yats.vim'
+"// " Plug 'leafOfTree/vim-svelte-plugin'
 
 " Sorry boys I need my multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'dstein64/vim-startuptime'
 
 " Editor Stuff
-Plug 'ThePrimeagen/harpoon'
-Plug 'phaazon/hop.nvim'
-Plug 'mbbill/undotree'
-Plug 'tversteeg/registers.nvim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'voldikss/vim-floaterm'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+"// Plug 'ThePrimeagen/harpoon'
+"// Plug 'tversteeg/registers.nvim'
+"// Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
-Plug 'mihaifm/bufstop'
-Plug 'tpope/vim-surround'
+"// Plug 'mihaifm/bufstop'
 
 " Vim helpers
 Plug 'liuchengxu/vim-which-key'
 Plug 'kamykn/spelunker.vim'
 
 " Vim toys
+Plug 'folke/zen-mode.nvim'
 Plug 'andweeb/presence.nvim'
-Plug 'ThePrimeagen/vim-be-good'
 Plug 'psliwka/vim-smoothie'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+"// Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+"// Plug 'junegunn/goyo.vim'
+"// Plug 'junegunn/limelight.vim'
 
 " Colors
-Plug 'colepeters/spacemacs-theme.vim' " This is the important color
-Plug 'kyazdani42/blue-moon'
-Plug 'farfanoide/vim-facebook'
-Plug 'arcticicestudio/nord-vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'morhetz/gruvbox'
+" Plug 'colepeters/spacemacs-theme.vim'
+"// Plug 'kyazdani42/blue-moon'
+"// Plug 'farfanoide/vim-facebook'
+"// Plug 'arcticicestudio/nord-vim'
+"// Plug 'cocopon/iceberg.vim'
+"// Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
-Plug 'Shadorain/shadotheme'
+"// Plug 'Shadorain/shadotheme'
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'tek256/simple-dark'
-Plug 'vigoux/oak'
+"// Plug 'tek256/simple-dark'
+"// Plug 'vigoux/oak'
 Plug 'mvargasmoran/shadows-die-twice-vim'
 Plug 'vim-conf-live/vimconflive2021-colorscheme'
 
@@ -127,15 +116,18 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-set background=dark
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+" set background=dark
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-"colorscheme tokyonight
-"colorscheme shadows-die-twice
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+" colorscheme tokyonight
+" First go into VISUAL and them push the lines with J/K
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+" colorscheme shadows-die-twice
 "colorscheme vimconflive-2021
 
 "colorscheme iceberg
@@ -156,4 +148,10 @@ let g:tokyonight_enable_italic = 1
 
 lua require("fended")
 
-
+lua << EOF
+  require("zen-mode").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
