@@ -60,15 +60,40 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  use { 
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make', 
+    cond = vim.fn.executable 'make' == 1 
+  }
 
 
   -- Spellchecker
   use 'kamykn/spelunker.vim'
+
+  -- Bunch of things
   use 'folke/zen-mode.nvim'
   use 'junegunn/limelight.vim'
   use 'junegunn/goyo.vim'
+  use {
+    'tamton-aquib/duck.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
+      vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+    end
+  }
 
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+  end
+  }
+
+  use { 'bennypowers/nvim-regexplainer',
+    config = function() require'regexplainer'.setup() end,
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      'MunifTanjim/nui.nvim',
+    } 
+  }
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -129,6 +154,25 @@ vim.o.smartcase = true
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+-- some niceties
+vim.o.scrolloff = 8
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.autoindent = true
+-- vim.opt.expandtab = true
+-- vim.bo.expandtab = true
+
+-- vim.cmd [[
+-- set autoindent
+-- set shiftwidth=4
+-- set smartindent
+-- set softtabstop=4
+-- set tabstop=4
+-- set expandtab
+-- ]]
 
 -- Set colorscheme
 vim.o.termguicolors = true
