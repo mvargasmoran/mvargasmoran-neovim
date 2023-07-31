@@ -60,16 +60,43 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 
+  use {
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make', 
-    cond = vim.fn.executable 'make' == 1 
+    run = 'make',
+    cond = vim.fn.executable 'make' == 1
   }
+
+  -- sponge bob
+  use 'tjdevries/sPoNGe-BoB.NvIm'
 
 
   -- Spellchecker
   use 'kamykn/spelunker.vim'
 
+  use {'ThePrimeagen/harpoon',
+    -- -- event = "VeryLazy",
+    -- -- keys = {
+    -- --   { "<leader>ha", function() require('harpoon.mark').add_file() end,  desc = '[H]arpoon [A]dd Mark' },
+    -- --   { "<leader>ht", function() require('harpoon.ui').toggle_quick_menu() end, desc = '[H]arpoon [T]oggle Menu' },
+    -- --   { "<leader>hh", function() require('harpoon.ui').nav_file(1) end, desc = '[H]arpoon [h]jkl nav' },
+    -- --   { "<leader>hj", function() require('harpoon.ui').nav_file(2) end, desc = '[H]arpoon h[j]kl nav' },
+    -- --   { "<leader>hk", function() require('harpoon.ui').nav_file(3) end, desc = '[H]arpoon hj[k]l nav' },
+    -- --   { "<leader>hl", function() require('harpoon.ui').nav_file(4) end, desc = '[H]arpoon hjk[l] nav' },
+    -- -- },
+    -- -- -- opts = {
+    -- -- --   global_settings = {
+    -- -- --     enter_on_sendcmd = true
+    -- -- --   }
+    -- -- -- },
+    -- config = function()
+    --   require("harpoon").setup({
+    --     tabline = false,
+    --     menu = {
+    --       width = vim.api.nvim_win_get_width(0) - 4,
+    --     }
+    --   })
+    --  end,
+  }
   -- Bunch of things
   use 'folke/zen-mode.nvim'
   use 'junegunn/limelight.vim'
@@ -82,9 +109,10 @@ require('packer').startup(function(use)
     end
   }
 
-  use {'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup{}
-  end
+  use {'nvim-orgmode/orgmode',
+    config = function()
+      require('orgmode').setup{}
+    end
   }
 
   use { 'bennypowers/nvim-regexplainer',
@@ -92,7 +120,7 @@ require('packer').startup(function(use)
     requires = {
       'nvim-treesitter/nvim-treesitter',
       'MunifTanjim/nui.nvim',
-    } 
+    }
   }
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -276,6 +304,14 @@ vim.keymap.set('n', '<leader>pw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>ps', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>pd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
+-- Harpoon stuff
+vim.keymap.set('n', "<leader>ha", require('harpoon.mark').add_file , {  desc = '[H]arpoon [A]dd Mark' })
+vim.keymap.set('n', "<leader>ht", require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [T]oggle Menu' })
+vim.keymap.set('n', "<C-h>", function() require('harpoon.ui').nav_file(1) end, { desc = '[H]arpoon [h]jkl nav' })
+vim.keymap.set('n', "<C-j>", function() require('harpoon.ui').nav_file(2) end, { desc = '[H]arpoon h[j]kl nav' })
+vim.keymap.set('n', "<C-k>", function() require('harpoon.ui').nav_file(3) end, { desc = '[H]arpoon hj[k]l nav' })
+vim.keymap.set('n', "<C-l>", function() require('harpoon.ui').nav_file(4) end, { desc = '[H]arpoon hjk[l] nav' })
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
@@ -345,6 +381,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -374,7 +413,8 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<leader>k', vim.lsp.buf.signature_help, 'signature documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -445,6 +485,7 @@ require('fidget').setup()
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+
 
 cmp.setup {
   snippet = {
