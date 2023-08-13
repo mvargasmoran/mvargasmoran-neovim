@@ -44,6 +44,11 @@ require('packer').startup(function(use)
   }
   -- colors
   use 'Shatur/neovim-ayu'
+  use 'mvargasmoran/shadows-die-twice-vim'
+  use 'rebelot/kanagawa.nvim'
+  use 'EdenEast/nightfox.nvim'
+  use 'haishanh/night-owl.vim'
+  use 'tiagovla/tokyodark.nvim'
 
   -- Git related plugins
   use 'tpope/vim-fugitive'
@@ -68,35 +73,13 @@ require('packer').startup(function(use)
 
   -- sponge bob
   use 'tjdevries/sPoNGe-BoB.NvIm'
-
+  use 'ThePrimeagen/vim-be-good'
 
   -- Spellchecker
   use 'kamykn/spelunker.vim'
 
-  use {'ThePrimeagen/harpoon',
-    -- -- event = "VeryLazy",
-    -- -- keys = {
-    -- --   { "<leader>ha", function() require('harpoon.mark').add_file() end,  desc = '[H]arpoon [A]dd Mark' },
-    -- --   { "<leader>ht", function() require('harpoon.ui').toggle_quick_menu() end, desc = '[H]arpoon [T]oggle Menu' },
-    -- --   { "<leader>hh", function() require('harpoon.ui').nav_file(1) end, desc = '[H]arpoon [h]jkl nav' },
-    -- --   { "<leader>hj", function() require('harpoon.ui').nav_file(2) end, desc = '[H]arpoon h[j]kl nav' },
-    -- --   { "<leader>hk", function() require('harpoon.ui').nav_file(3) end, desc = '[H]arpoon hj[k]l nav' },
-    -- --   { "<leader>hl", function() require('harpoon.ui').nav_file(4) end, desc = '[H]arpoon hjk[l] nav' },
-    -- -- },
-    -- -- -- opts = {
-    -- -- --   global_settings = {
-    -- -- --     enter_on_sendcmd = true
-    -- -- --   }
-    -- -- -- },
-    -- config = function()
-    --   require("harpoon").setup({
-    --     tabline = false,
-    --     menu = {
-    --       width = vim.api.nvim_win_get_width(0) - 4,
-    --     }
-    --   })
-    --  end,
-  }
+  use 'ThePrimeagen/harpoon'
+
   -- Bunch of things
   use 'folke/zen-mode.nvim'
   use 'junegunn/limelight.vim'
@@ -202,11 +185,6 @@ vim.o.autoindent = true
 -- set expandtab
 -- ]]
 
--- Set colorscheme
-vim.o.termguicolors = true
--- vim.cmd [[colorscheme onedark]]
-vim.cmd [[colorscheme ayu]]
-
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
@@ -236,13 +214,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+
+-- Set colorscheme
+vim.o.termguicolors = true
+vim.cmd [[colorscheme onedark]]
+-- vim.cmd [[colorscheme ayu]]
+-- vim.cmd [[colorscheme tokyodark]]
+-- vim.cmd [[colorscheme shadows-die-twice]]
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'ayu',
-    -- theme = 'onedark',
+    -- theme = 'ayu',
+    theme = 'onedark',
+    -- theme = 'shadows-die-twice',
+    -- theme = 'tokyodark',
     component_separators = '|',
     section_separators = '',
   },
@@ -381,8 +369,16 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+-- Imported Keymaps
+-- push lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- move around splits
+vim.keymap.set('n', '<leader>wh', ':wincmd h<cr>')
+vim.keymap.set('n', '<leader>wj', ':wincmd j<cr>')
+vim.keymap.set('n', '<leader>wk', ':wincmd k<cr>')
+vim.keymap.set('n', '<leader>wl', ':wincmd l<cr>')
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
