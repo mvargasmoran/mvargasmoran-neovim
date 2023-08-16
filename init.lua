@@ -380,6 +380,27 @@ vim.keymap.set('n', '<leader>wj', ':wincmd j<cr>')
 vim.keymap.set('n', '<leader>wk', ':wincmd k<cr>')
 vim.keymap.set('n', '<leader>wl', ':wincmd l<cr>')
 
+-- Use alt + hjkl to resize windows
+vim.keymap.set('n', "<leader>rj", ":resize -2<CR>")
+vim.keymap.set('n', "<leader>rk", ":resize +2<CR>")
+vim.keymap.set('n', "<leader>rh", ":vertical resize -2<CR>")
+vim.keymap.set('n', "<leader>rl", ":vertical resize +2<CR>")
+
+-- This feels like emacs cycling buffers, feels like home
+vim.keymap.set('n', "<C-x>j", ":bp<CR>")
+vim.keymap.set('n', "<C-x>h", ":bp<CR>")
+vim.keymap.set('n', "<C-x>k", ":bn<CR>")
+vim.keymap.set('n', "<C-x>l", ":bn<CR>")
+
+---------General Mappings----------------------------------------------------"
+-- Edit Vimrc File easily
+vim.keymap.set('n', "<Leader>ev", ":tabedit $MYVIMRC<cr>")
+vim.keymap.set('n', "<Leader>ez", ":tabedit ~/.zshrc<cr>")
+vim.keymap.set('n', "<Leader>eh", ":tabedit /etc/hosts<cr>")
+vim.keymap.set('n', "<Leader>ep", ":tabedit ~/Code/nvimThings<cr>")
+vim.keymap.set('n', "<Leader>eg", ":tabedit ~/.gitconfig<cr>")
+-- vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -437,8 +458,11 @@ local servers = {
   -- pyright = {},
   rust_analyzer = {},
   tsserver = {},
-  cssls = {},
+  cssls = {
+    filetypes = { "css", "scss", "less", "svelte" }
+  },
   emmet_ls = {},
+  svelte = {},
 
   sumneko_lua = {
     Lua = {
