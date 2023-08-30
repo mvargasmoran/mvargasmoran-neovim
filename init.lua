@@ -64,6 +64,11 @@ require('packer').startup(function(use)
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
+
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
@@ -77,10 +82,15 @@ require('packer').startup(function(use)
 
   -- Spellchecker
   use 'kamykn/spelunker.vim'
-
+  -- Harpoonia
   use 'ThePrimeagen/harpoon'
+  use {
+      'AckslD/nvim-whichkey-setup.lua',
+      requires = {'liuchengxu/vim-which-key'},
+  }
 
   -- Bunch of things
+
   use 'folke/zen-mode.nvim'
   use 'junegunn/limelight.vim'
   use 'junegunn/goyo.vim'
@@ -291,6 +301,9 @@ vim.keymap.set('n', '<leader>ph', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>pw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>ps', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>pd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set( "n", "<leader>pe", "<cmd>lua require('telescope').extensions.file_browser.file_browser({path =  vim.fn.expand('%:p:h')})<CR>", 
+    { noremap = true, desc = 'Browse current file Dir' }
+)
 
 -- Harpoon stuff
 vim.keymap.set('n', "<leader>ha", require('harpoon.mark').add_file , {  desc = '[H]arpoon [A]dd Mark' })
@@ -299,9 +312,18 @@ vim.keymap.set('n', "<C-h>", function() require('harpoon.ui').nav_file(1) end, {
 vim.keymap.set('n', "<C-j>", function() require('harpoon.ui').nav_file(2) end, { desc = '[H]arpoon h[j]kl nav' })
 vim.keymap.set('n', "<C-k>", function() require('harpoon.ui').nav_file(3) end, { desc = '[H]arpoon hj[k]l nav' })
 vim.keymap.set('n', "<C-l>", function() require('harpoon.ui').nav_file(4) end, { desc = '[H]arpoon hjk[l] nav' })
-
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
+vim.g.which_key_timeout = 500
+require("whichkey_setup").config{
+    hide_statusline = false,
+    default_keymap_settings = {
+        silent=true,
+        noremap=true,
+    },
+    default_mode = 'n',
+}  
+  
+  -- [[ Configure Treesitter ]]
+  -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
@@ -391,6 +413,8 @@ vim.keymap.set('n', "<C-x>j", ":bp<CR>")
 vim.keymap.set('n', "<C-x>h", ":bp<CR>")
 vim.keymap.set('n', "<C-x>k", ":bn<CR>")
 vim.keymap.set('n', "<C-x>l", ":bn<CR>")
+
+vim.keymap.set({"n", "v"}, "<Leader>y", '"*y')
 
 ---------General Mappings----------------------------------------------------"
 -- Edit Vimrc File easily
