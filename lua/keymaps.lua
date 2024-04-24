@@ -39,15 +39,24 @@ vim.keymap.set('n', '<Leader>eh', ':tabedit /etc/hosts<cr>')
 vim.keymap.set('n', '<Leader>ep', ':tabedit ~/Code/nvimThings<cr>')
 vim.keymap.set('n', '<Leader>eg', ':tabedit ~/.gitconfig<cr>')
 
--- Harpoon stuff
--- vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file, { desc = '[H]arpoon [A]dd Mark' })
--- vim.keymap.set('n', '<leader>ht', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [T]oggle Menu' })
--- vim.keymap.set('n', '<C-h>', require('harpoon.ui').nav_file(1), { desc = '[H]arpoon [h]jkl nav' })
--- vim.keymap.set('n', '<C-j>', require('harpoon.ui').nav_file(2), { desc = '[H]arpoon h[j]kl nav' })
--- vim.keymap.set('n', '<C-k>', require('harpoon.ui').nav_file(3), { desc = '[H]arpoon hj[k]l nav' })
--- vim.keymap.set('n', '<C-l>', require('harpoon.ui').nav_file(4), { desc = '[H]arpoon hjk[l] nav' })
+-- To get telescope-file-browser loaded and working with telescope,
+-- you need to call load_extension, somewhere after setup function:
+-- ":Telescope file_browser<CR>",
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>pr",
+  "<cmd>lua require('telescope').extensions.file_browser.file_browser()<CR>",
+  { noremap = true }
+)
+-- utils.map('n', '<leader>fb', "<cmd>lua require('telescope').extensions.file_browser.file_browser({path =  vim.fn.expand('%:p:h')})<CR>", silent_noremap)
 
--- vim.keymap.set('n', '<C-h>', function() require('harpoon.ui').nav_file(1) end, { desc = '[H]arpoon [h]jkl nav' })
--- vim.keymap.set('n', '<C-j>', function() require('harpoon.ui').nav_file(2) end, { desc = '[H]arpoon h[j]kl nav' })
--- vim.keymap.set('n', '<C-k>', function() require('harpoon.ui').nav_file(3) end, { desc = '[H]arpoon hj[k]l nav' })
--- vim.keymap.set('n', '<C-l>', function() require('harpoon.ui').nav_file(4) end, { desc = '[H]arpoon hjk[l] nav' })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>pe",
+  "<cmd>lua require('telescope').extensions.file_browser.file_browser({path =  vim.fn.expand('%:p:h')})<CR>",
+  { noremap = true }
+)
+
+--  { noremap = true, cwd_to_path = true }
+-- " nnoremap <leader>pe :lua require('telescope.builtin').file_browser({cwd = vim.fn.expand("%:p:h")})<CR>
+
