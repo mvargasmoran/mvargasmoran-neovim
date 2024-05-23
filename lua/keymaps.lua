@@ -4,6 +4,8 @@
 -- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+-- Oil.nvim thingies
+vim.keymap.set('n', "<Leader>o", '<CMD>Oil<CR>', { desc = 'Open Oil File explorer thingy' })
 -- Imported Keymaps
 -- push lines
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
