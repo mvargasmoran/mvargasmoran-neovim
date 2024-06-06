@@ -24,10 +24,10 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- vim.keymap.set('n', '<leader>rl', ':vertical resize +2<CR>')
 
 -- This feels like emacs cycling buffers, feels like home
-vim.keymap.set('n', '<C-x>j', ':bp<CR>')
-vim.keymap.set('n', '<C-x>h', ':bp<CR>')
-vim.keymap.set('n', '<C-x>k', ':bn<CR>')
-vim.keymap.set('n', '<C-x>l', ':bn<CR>')
+vim.keymap.set('n', '<C-x>j', ':bp<CR>', { desc = 'previous buffer' })
+vim.keymap.set('n', '<C-x>h', ':bp<CR>', { desc = 'previous buffer' })
+vim.keymap.set('n', '<C-x>k', ':bn<CR>', { desc = 'next buffer' })
+vim.keymap.set('n', '<C-x>l', ':bn<CR>', { desc = 'next buffer' })
 
 -- TL;DR; This basically puts what you yank into the systems clipboard.
 -- this put yank stuff on the * (clipboard) register.
