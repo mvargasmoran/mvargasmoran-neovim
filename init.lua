@@ -335,7 +335,8 @@ require('lazy').setup({
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- branch = 'master',
+    -- branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
@@ -388,18 +389,18 @@ require('lazy').setup({
           },
           path_display = {
             filename_first = {
-              reverse_directories = false,
+              reverse_directories = true,
             },
           },
         },
-        pickers = {
-          find_files = {
-            theme = 'dropdown',
-          },
-          buffers = {
-            theme = 'dropdown',
-          },
-        },
+        -- pickers = {
+        --   find_files = {
+        --     theme = 'dropdown',
+        --   },
+        --   buffers = {
+        --     theme = 'dropdown',
+        --   },
+        -- },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -621,6 +622,7 @@ require('lazy').setup({
         clangd = {},
         gopls = {},
         intelephense = {},
+        elixirls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -934,7 +936,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
