@@ -1,8 +1,8 @@
 -- Diagnostic keymaps
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
--- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Oil.nvim thingies
 vim.keymap.set('n', "<Leader>o", '<CMD>Oil<CR>', { desc = 'Open Oil File explorer thingy' })
@@ -11,6 +11,8 @@ vim.keymap.set('n', "<Leader>o", '<CMD>Oil<CR>', { desc = 'Open Oil File explore
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+-- Gitsigns
+vim.keymap.set('n', '<Leader>gsb', ":Gitsigns blame_line<CR>")
 -- move around splits
 -- vim.keymap.set('n', '<leader>wh', ':wincmd h<cr>')
 -- vim.keymap.set('n', '<leader>wj', ':wincmd j<cr>')

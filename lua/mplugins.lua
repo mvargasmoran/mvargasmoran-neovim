@@ -1,4 +1,5 @@
 return {
+  'tpope/vim-abolish',
   'tpope/vim-fugitive',
   'tjdevries/sPoNGe-BoB.NvIm',
   'ThePrimeagen/vim-be-good',
@@ -35,6 +36,7 @@ return {
   }
 }
 
+-- OIL Nvim
   -- keymaps = {
   --   ["g?"] = "actions.show_help",
   --   ["<CR>"] = "actions.select",
