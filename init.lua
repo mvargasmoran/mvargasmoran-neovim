@@ -393,9 +393,19 @@ require('lazy').setup({
             },
           },
         },
+        -- https://github.com/nvim-telescope/telescope.nvim/issues/2446#issuecomment-1875123859
         pickers = {
           find_files = {
             theme = 'dropdown',
+            hidden = true,
+            find_command = {
+              "rg",
+              "--files",
+              "--glob",
+              "!{.git/*,.svelte-kit/*,target/*,node_modules/*}",
+              "--path-separator",
+              "/",
+            }
           },
           buffers = {
             theme = 'dropdown',
