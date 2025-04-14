@@ -379,13 +379,42 @@ require('lazy').setup({
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
-      require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
-        --  All the info you're looking for is in `:help telescope.setup()`
-        --
+
+      local telescope = require 'telescope'
+      local actions = require 'telescope.actions'
+
+      -- https://github.com/MagicDuck/grug-far.nvim/pull/305
+      local is_windows = vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1
+      local vimfnameescape = vim.fn.fnameescape
+      local winfnameescape = function(path)
+        local escaped_path = vimfnameescape(path)
+        if is_windows then
+          local need_extra_esc = path:find('[%[%]`%$~]')
+          local esc = need_extra_esc and '\\\\' or '\\'
+          escaped_path = escaped_path:gsub('\\[%(%)%^&;]', esc .. '%1')
+          if need_extra_esc then
+            escaped_path = escaped_path:gsub("\\\\['` ]", '\\%1')
+          end
+        end
+        return escaped_path
+      end
+
+      local select_default = function(prompt_bufnr)
+        vim.fn.fnameescape = winfnameescape
+        local result = actions.select_default(prompt_bufnr, "default")
+        vim.fn.fnameescape = vimfnameescape
+        return result
+      end
+
+      telescope.setup {
         defaults = {
           mappings = {
-            i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+            i = {
+              ['<cr>'] = select_default,
+            },
+            n = {
+              ['<cr>'] = select_default,
+            }
           },
           path_display = {
             filename_first = {
@@ -407,6 +436,34 @@ require('lazy').setup({
           },
         },
       }
+      -- require('telescope').setup {
+      --   -- You can put your default mappings / updates / etc. in here
+      --   --  All the info you're looking for is in `:help telescope.setup()`
+      --   --
+      --   defaults = {
+      --     mappings = {
+      --       i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+      --     },
+      --     path_display = {
+      --       filename_first = {
+      --         reverse_directories = true,
+      --       },
+      --     },
+      --   },
+      --   pickers = {
+      --     find_files = {
+      --       theme = 'dropdown',
+      --     },
+      --     buffers = {
+      --       theme = 'dropdown',
+      --     },
+      --   },
+      --   extensions = {
+      --     ['ui-select'] = {
+      --       require('telescope.themes').get_dropdown(),
+      --     },
+      --   },
+      -- }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')

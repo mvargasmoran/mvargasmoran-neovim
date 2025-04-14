@@ -33,7 +33,8 @@ return {
     config = function ()
       require("oil").setup()
     end
-  }
+  },
+  -- https://github.com/nvim-telescope/telescope.nvim/issues/2446#issuecomment-2475424902
 }
 
 -- OIL Nvim
