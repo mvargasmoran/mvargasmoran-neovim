@@ -9,7 +9,8 @@ vim.bo.softtabstop = 2
 -- vim.o.statuscolumn = '%s %l %r '
 -- vim.o.statuscolumn = '%s %l %r'
 vim.opt.relativenumber = true
-vim.o.statuscolumn = '%s %{v:lnum}%T│%=%T%{v:relnum}%=│'
+-- vim.o.statuscolumn = '%s %{v:lnum}%T│%=%T%{v:relnum}%=│'
+vim.o.statuscolumn = '%s %{(v:lnum<10) ? " ".v:lnum : "".v:lnum} %T│%=%T%{v:relnum}%=│'
 
 -- vim.o.statuscolumn = '%#NonText#%{&nu?v:lnum:""} %=%{&rnu&&(v:lnum%2)?" ".v:relnum:""} %#LineNr#%{&rnu&&!(v:lnum%2)?" ".v:relnum:""}'
 
