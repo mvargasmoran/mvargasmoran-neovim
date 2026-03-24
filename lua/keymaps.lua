@@ -12,7 +12,8 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Gitsigns
-vim.keymap.set('n', '<Leader>gsb', ":Gitsigns blame_line<CR>")
+vim.keymap.set('n', '<Leader>gsb', ":Gitsigns blame_line<CR>", { desc = "Blame Line" })
+vim.keymap.set('n', '<Leader>gsf', ":lua require('gitsigns').blame_line({full = true})<CR>", { desc = "Blame Line [Full]" })
 -- move around splits
 -- vim.keymap.set('n', '<leader>wh', ':wincmd h<cr>')
 -- vim.keymap.set('n', '<leader>wj', ':wincmd j<cr>')
