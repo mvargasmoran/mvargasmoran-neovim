@@ -1,24 +1,17 @@
-return {
-  'tpope/vim-abolish',
-  'tpope/vim-fugitive',
-  'tjdevries/sPoNGe-BoB.NvIm',
-  'ThePrimeagen/vim-be-good',
+vim.pack.add {
+  -- editing / git / practice
+  'https://github.com/tpope/vim-abolish',
+  'https://github.com/tpope/vim-fugitive',
+  'https://github.com/tjdevries/sPoNGe-BoB.NvIm',
+  'https://github.com/ThePrimeagen/vim-be-good',
+  'https://github.com/andrewferrier/debugprint.nvim',
+
   -- colors
-  'Shatur/neovim-ayu',
-  'mvargasmoran/shadows-die-twice-vim',
-  'rebelot/kanagawa.nvim',
-  'EdenEast/nightfox.nvim',
-  'haishanh/night-owl.vim',
-  'tiagovla/tokyodark.nvim',
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-  {
-    'andrewferrier/debugprint.nvim',
-    opts = {},
-    dependencies = {
-      'echasnovski/mini.nvim',
-      'nvim-telescope/telescope.nvim',
-    },
-    lazy = false,
-    version = '*',
-  },
+  'https://github.com/Shatur/neovim-ayu',
+  'https://github.com/mvargasmoran/shadows-die-twice-vim',
+  'https://github.com/rebelot/kanagawa.nvim',
+  'https://github.com/EdenEast/nightfox.nvim',
+  'https://github.com/haishanh/night-owl.vim',
+  'https://github.com/tiagovla/tokyodark.nvim',
+  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
 }

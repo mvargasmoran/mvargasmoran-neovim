@@ -29,3 +29,13 @@ vim.o.statuscolumn = '%s %{(v:lnum<10) ? " ".v:lnum : "".v:lnum} %T│%=%T%{v:re
 
 -- " Line number with bar separator and click handlers:
 -- vim.o.statuscolumn="%@SignCb@%s%=%T%@NumCb@%l│%T"
+
+-- make background transparent
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+  end,
+})
